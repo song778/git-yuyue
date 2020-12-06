@@ -1,0 +1,24 @@
+
+<scroll-view scroll-x class="bg-white nav text-center">
+  <view class="cu-item {{index==TabCur?'text-blue cur':''}}" wx:for="{{2}}" wx:key="index" bindtap="tabSelect" data-id="{{index}}">
+    会议室{{index == 0? 'A' : 'B'}}
+  </view>
+</scroll-view>
+
+<view class="cart_items" wx:for="{{messages}}" wx:key="index" bindtap="onOrderDetail" data-id="{{item._id}}">
+  <tui-card image="{{item.avatarUrl}}" title="{{item.roomName}}" tag="{{item.createTime}}" border="{{true}}">
+    <view slot="body">
+      <view class="tui-default">
+        借用人：【{{item.borrowPeople}}】  使用目的：【{{item.goal}}】借用人单位：【{{item.unit}}】（点击查看详细信息）
+      </view>
+    </view>
+    <view slot="footer">
+      <view class="tui-default tui-flex">
+       
+        <tui-tag type="light-green" padding="8rpx 12rpx" size="24rpx" wx:if="{{item.state == 0}}">未审核</tui-tag>
+        <tui-tag type="light-gray" padding="8rpx 12rpx" size="24rpx" wx:if="{{item.state == 1}}">同意</tui-tag>
+        <tui-tag type="light-gray" padding="8rpx 12rpx" size="24rpx" wx:if="{{item.state == 2}}">已拒绝</tui-tag>
+      </view>
+    </view>
+  </tui-card>
+</view>

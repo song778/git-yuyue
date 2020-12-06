@@ -1,0 +1,77 @@
+.used_time{
+  width: 100%;
+  height: 80rpx;
+  display: flex;
+  align-items: center;
+  font-size: 32rpx;
+  background-color: #fff;
+  padding-left: 28rpx;
+  border-bottom: 1rpx solid #eeecec;
+}
+
+.GLentrance{
+  display: flex;
+  justify-items: center;
+  align-items: center;
+}
+
+
+.container {
+	padding: 20rpx 0 120rpx 0;
+	box-sizing: border-box;
+}
+
+.header {
+	padding: 80rpx 90rpx 60rpx 90rpx;
+	box-sizing: border-box;
+}
+
+.title {
+	font-size: 34rpx;
+	color: #333;
+	font-weight: 500;
+}
+
+.sub-title {
+	font-size: 24rpx;
+	color: #7a7a7a;
+	padding-top: 18rpx;
+}
+
+.tui-btn-box {
+	padding: 10rpx 40rpx;
+	box-sizing: border-box;
+}
+
+.tui-modal-custom {
+	text-align: center;
+}
+
+.tui-tips-img {
+	width: 80rpx;
+	height: 80rpx;
+	margin-top: 20rpx;
+}
+
+.tui-modal-custom-text {
+	font-size: 30rpx;
+	color: #333;
+	padding: 30rpx 0 50rpx;
+}
+
+.tui-prompt-title {
+	padding-bottom: 20rpx;
+	font-size: 34rpx;
+}
+.tui-modal-input {
+	width: 80%;
+	border-bottom: 1rpx solid #e6e6e6;
+	margin: 30rpx auto 50rpx;
+	padding-bottom: 20rpx;
+	font-size: 32rpx;
+}
+.tui-hidden-input{
+	/* #ifdef MP-WEIXIN */
+	width: 0;
+	/* #endif */
+}

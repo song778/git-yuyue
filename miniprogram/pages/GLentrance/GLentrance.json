@@ -1,0 +1,6 @@
+{ "navigationBarBackgroundColor": "#fff",
+  "usingComponents": { "tui-tabs":"../../components/thorui/tui-tabs/tui-tabs",
+    "tui-card":"../../../components/thorui/tui-card/tui-card",
+    "tui-tag":"../../../components/thorui/tui-tag/tui-tag"
+  }
+}

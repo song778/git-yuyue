@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "tui-modal": "/components/thorui/tui-modal/tui-modal",
+    "tui-button":"/components/thorui/tui-button/tui-button",
+    "x-login": "/components/login/login"
+  }
+}

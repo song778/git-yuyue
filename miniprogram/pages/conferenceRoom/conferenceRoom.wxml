@@ -1,0 +1,28 @@
+
+<view class='margin-xl bg-white padding-xl radius shadow-lg'>
+  <view class='text-center margin-bottom text-lg  text-grey'>关于会议室{{name}}</view>
+  <view class='text-content'>
+    <view>Hi！同学们~欢迎预约会议室{{name}}！</view>
+
+    <view class="cu-form-group">
+		<view class="title">日期选择</view>
+		<picker mode="date" value="{{date1}}" start="2015-09-01" end="2050-09-01" bindchange="DateChange">
+			<view class="picker">
+				{{date1}}
+			</view>
+    </picker>
+  </view>
+  <view class="cu-list grid col-{{gridCol}} {{gridBorder?'':'no-border'}}">
+    <view class="cu-item" wx:for="{{iconList}}" wx:key="index" style="background-color:{{item.reserve == '可预约'? '#fff' : '#d1cece'}}; border:1rpx solid #d1cece; ">
+      <text>{{item.time}}</text>
+      <text>{{item.reserve}}</text>
+    </view>
+    </view>
+    
+    <view class='margin-top-sm'>会议室A地址：{{addres}}</view>
+  </view>
+</view>
+
+<view class="GLentrance">
+<button class="cu-btn bg-red margin-tb-sm lg" bindtap="onEntrance">点击预约</button>
+</view>

@@ -1,0 +1,30 @@
+<swiper class="card-swiper {{DotStyle?'square-dot':'round-dot'}}" indicator-dots="true" circular="true" autoplay="true" interval="5000" duration="500" bindchange="cardSwiper" indicator-color="#8799a3" indicator-active-color="#0081ff">
+  <swiper-item wx:for="{{swiperList}}" wx:key="index" class="{{cardCur==index?'cur':''}}">
+    <view class="swiper-item">
+      <image src="{{item.url}}" mode="aspectFill" wx:if="{{item.type=='image'}}"></image>
+      <video src="{{item.url}}" autoplay loop muted show-play-btn="{{false}}" controls="{{false}}" objectFit="cover" wx:if="{{item.type=='video'}}"></video>
+    </view>
+  </swiper-item>
+</swiper>
+
+<view class="cart_conference" style="background-color: #eeedee;" bindtap="onRoom" data-name="A">
+  <image mode="widthFix" src="../../images/conferenceA.png"></image>
+  <view class="cart_right">
+    <text class="cart_title">会议室A ></text>
+    <text class="cart_detail" style="margin:10rpx 10rpx;">会议室是对学生开放的学习交流空间，学生可以进行预约撒大沙发睡沙发</text>
+    <text class="cart_time">10:00 -- 22:00</text>
+  </view>
+</view>
+
+<view class="cart_conference" style="background-color: #eeedee;" bindtap="onRoom" data-name="B">
+  <image mode="widthFix" src="../../images/conferenceB.png"></image>
+  <view class="cart_right">
+    <text class="cart_title">会议室B ></text>
+    <text class="cart_detail" style="margin:10rpx 10rpx;">会议室是对学生开放的学习交流空间，学生可以进行预约</text>
+    <text class="cart_time">10:00 -- 22:00</text>
+  </view>
+</view>
+<view class="GLentrance" wx:if="{{guanli}}">
+<button class="cu-btn bg-red margin-tb-sm lg" bindtap="onEntrance">管理员入口</button>
+</view>
+

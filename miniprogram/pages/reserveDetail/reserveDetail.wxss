@@ -1,0 +1,41 @@
+/* 跑腿单  */
+.cart_items{
+  margin-top: 20rpx;
+  margin-bottom: 20rpx;
+
+}
+.tui-default {
+ padding: 20rpx 30rpx;
+ font-size: 26rpx;
+}
+.tui-flex {
+ display: flex;
+ align-items: center;
+ justify-content: space-between;
+}
+.tui-vertical{
+  display: flex;
+  flex-direction: column;
+  /* align-items: center; */
+  /* color: #9c9898; */
+}
+
+/* 订单截图 */
+
+.cart_img{
+  display: flex;
+  flex-wrap: wrap;
+}
+.cart_img image{
+  border-radius: 20rpx;
+  margin: 5rpx;
+
+}
+
+/* 接单 */
+.btn{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

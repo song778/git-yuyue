@@ -1,0 +1,7 @@
+<view class="modal" hidden="{{!modalShow}}">
+  <view class="panel">
+     <i class="iconfont icon-cha bubble" bindtap="onClose"></i>
+      <slot name="modal-content"></slot>
+      <slot name="publish_goal"></slot>
+  </view>
+</view>

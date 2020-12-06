@@ -1,0 +1,15 @@
+/* 跑腿单  */
+.cart_items{
+  margin-top: 20rpx;
+  margin-bottom: 20rpx;
+
+}
+.tui-default {
+ padding: 20rpx 30rpx;
+ font-size: 26rpx;
+}
+.tui-flex {
+ display: flex;
+ align-items: center;
+ justify-content: space-between;
+}

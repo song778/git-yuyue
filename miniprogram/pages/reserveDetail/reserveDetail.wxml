@@ -1,0 +1,61 @@
+<!-- 跑腿单 -->
+<view class="cart_items" >
+  <tui-card image="{{messages.img}}" title="{{messages.title}}"  tag="{{messages.tag}}" border="{{true}}">
+    <view slot="body">
+      <view class="tui-default">
+        借用人：【{{messages.borrowPeople}}】  使用目的：【{{messages.goal}}】借用人单位：【{{messages.unit}}】借用【{{messages.roomName}}】会议室
+      </view>
+    </view>
+    <view  slot="detail">
+      <view class="tui-default tui-vertical">
+        <view style="padding-top:25rpx;">借用日期： <text style="color:#9c9898;">{{messages.date1}}</text></view>
+        <view style="padding-top:25rpx;" wx:for="{{messages.timeArr}}" wx:key="index">借用时间段： <text style="color:#9c9898;">{{item}}</text></view>
+       <view style="padding-top:25rpx;">借用人联系方式： <text style="color:#9c9898;">{{messages.borrowPhone}}</text></view>
+       <view  style="padding-top:25rpx;">组织负责人： <text style="color:#9c9898;">{{messages.responsiblePeople}}</text></view>
+       <view  style="padding-top:25rpx;">负责人联系方式： <text style="color:#9c9898;">{{messages.responsiblePhone}}</text></view>
+       <view  style="padding-top:25rpx;">备注： <text style="color:#9c9898;">{{messages.remark}}</text></view>
+       
+      </view>
+    </view>
+    <view slot="footer">
+      <view class="tui-default tui-flex">
+      
+        <tui-tag type="light-green" padding="8rpx 12rpx" size="24rpx" wx:if="{{messages.schedule == 0}}">未审核</tui-tag>
+        <tui-tag type="light-gray" padding="8rpx 12rpx" size="24rpx" wx:if="{{messages.schedule == 1}}">完成</tui-tag>
+      </view>
+    </view>
+  </tui-card>
+</view>
+<!-- 分割线 -->
+<tui-divider dividerColor="#9c9898" width="80%" color="#9c9898">审核</tui-divider>
+<view class="btn" wx:if="{{state == 0}}">
+   <tui-button margin="0 20rpx 26rpx 0" width="280rpx" height="90rpx" size="32" bindclick="onSure">通过</tui-button>
+   <tui-button margin="0 20rpx 26rpx 0" type="green" width="280rpx" height="90rpx" size="32" bindclick="onRefuse">拒绝</tui-button>
+</view>
+
+<!-- 订阅消息是否发送弹框 -->
+<view class="cu-modal {{modalName=='DialogModal1'?'show':''}}">
+  <view class="cu-dialog">
+    <view class="cu-bar bg-white justify-end">
+      <view class="content">是否发送审核结果</view>
+      <view class="action" bindtap="hideModal">
+        <text class="cuIcon-close text-red"></text>
+      </view>
+    </view>
+    <view class="padding-xl">
+      {{state == 1? '通过' : '拒绝'}}
+    </view>
+    <view class="cu-bar bg-white justify-end">
+      <view class="action">
+        <button class="cu-btn  bg-green margin-right" style="margin-left:15rpx; "  bindtap="auditResultSure">确定</button>
+        <button class="cu-btn line-green text-green margin-left" style="margin-left:15rpx; margin-right:10rpx;"  bindtap="auditResultNo">取消</button>
+
+      </view>
+    </view>
+  </view>
+</view>
+
+
+
+
+

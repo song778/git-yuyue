@@ -1,0 +1,68 @@
+
+<view class="cu-form-group" style="margin:15rpx 0;">
+		<view class="title">1.日期选择</view>
+		<picker mode="date" value="{{date1}}" start="2015-09-01" end="2050-09-01" bindchange="DateChange">
+			<view class="picker">
+				{{date1}}
+			</view>
+    </picker>
+</view>
+<view class="used_time">
+  <text>2.使用时间段：</text>
+</view>
+<checkbox-group bindchange="checkboxChange">
+<view class="cu-form-group"  wx:for="{{time}}" wx:key="index">
+		<view class="title">{{item.value}}</view>
+		<checkbox class="round blue" value="{{item.value}}" disabled="{{item.disabled1? true : false}}"></checkbox>
+</view>
+</checkbox-group>
+
+<view class="cu-form-group" style="margin:15rpx 0;">
+		<view class="title">3.使用目的：</view>
+		<input placeholder="" bindinput="inputGoal"></input>
+</view>
+<view class="cu-form-group" style="margin:15rpx 0;">
+		<view class="title">4.借用人：</view>
+		<input placeholder="" bindinput="inputBorrowPeople"></input>
+</view>
+<view class="cu-form-group" style="margin:15rpx 0;">
+		<view class="title">5.借用人联系方式：</view>
+		<input placeholder="" bindinput="inputBorrowPhone" type="number"></input>
+</view>
+<view class="cu-form-group" style="margin:15rpx 0;">
+		<view class="title">6.组织负责人：</view>
+		<input placeholder="" bindinput="inputResponsiblePeople"></input>
+</view>
+<view class="cu-form-group" style="margin:15rpx 0;">
+		<view class="title">7.负责人联系方式：</view>
+		<input placeholder="" bindinput="inputResponsiblePhone" type="number"></input>
+</view>
+<view class="cu-form-group " style="margin:15rpx 0;">
+		<view class="title">借用人单位：</view>
+		<picker bindchange="PickerChange" value="{{picker[index]}}" range="{{picker}}">
+			<view class="picker">
+				{{index?picker[index]:'方式截断'}}
+			</view>
+		</picker>
+	</view> 
+<view class="cu-form-group align-start" style="margin:15rpx 0;">
+		<view class="title">9.备注：</view>
+		<textarea maxlength="-1" disabled="{{modalName!=null}}" bindinput="textareaBInput" placeholder="请输入备注"></textarea>
+  </view>
+  
+  <view class="GLentrance">
+<button class="cu-btn bg-red margin-tb-sm lg" bindtap="onPublish">提交</button>
+</view>
+
+<tui-modal show="{{modal9}}" bindcancel="hide9" custom="{{true}}" fadeIn>
+    <view class="tui-modal-custom">
+      <view class="tui-prompt-title">借用人单位</view>
+      <input placeholder="请输入单位" class="tui-modal-input {{!modal9?'tui-hidden-input':''}}" bindinput="input" />
+      <tui-button height="72rpx" size="28" shape="circle" bindclick="handleClick9">立即提交</tui-button>
+    </view>
+</tui-modal>
+
+<!--底部弹框-->
+<x-login modalShow="{{modalShow}}" bindloginsuccess="onLoginSuccess" bindloginfail="onLoginFail">
+</x-login>
+
